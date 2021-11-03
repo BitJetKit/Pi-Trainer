@@ -48,10 +48,8 @@ for x in range(50000):
 
     conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=[ENTER YOUR ACCESS DATABASE LOCATION HERE];')
     cursor = conn.cursor()
-    cursor.execute("Insert into Serializing (Results) values (?)", (pi))
+    cursor.execute("Insert into [ENTER YOUR DATABASE TABLE, HERE] ([ENTER YOUR DATABASE TABLE COLUMN, HERE]) values (?)", (pi))
     conn.commit()
-    # Get the Serializing Monte Carlo Pi table contents.
-    cursor.execute('select Serializing.Results from Serializing')
 
 print("Data Storage Complete")
    
